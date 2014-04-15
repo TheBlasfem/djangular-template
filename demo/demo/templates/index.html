@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular.min.js"></script>
+</head>
+<body ng-app="myapp">
+
+	{{ local }}
+
+	
+	<div ng-controller="mycontroller"><% valor %></div>
+
+
+	<script>
+
+	angular.module('myapp',[]).config(function($interpolateProvider) {
+	  $interpolateProvider.startSymbol('<%');
+	  $interpolateProvider.endSymbol('%>');
+	}).controller('mycontroller',function($scope){
+				$scope.valor = "Hello world angular";
+			});
+
+	</script>
+</body>
+</html>
